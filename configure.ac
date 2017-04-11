@@ -25,7 +25,7 @@ AC_CONFIG_HEADERS([include/translated/config.h])
 AC_CONFIG_FILES([
     Makefile
     include/Makefile
-    evq/Makefile
+    libevq/Makefile
     translated/Makefile
     pkginfo/Makefile
 ])

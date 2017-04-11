@@ -2,7 +2,7 @@ ACLOCAL_AMFLAGS=-I m4
 
 SUBDIRS = pkginfo \
 	translated \
-	evq \
+	libevq \
 	include
 	 
 dist_doc_DATA = README
