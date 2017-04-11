@@ -3,16 +3,16 @@
 
 #include <netdb.h>
 
-typedef struct dispatch_context dispatch_context_s;
+typedef struct evq_dispatch_context evq_dispatch_context_s;
 
 typedef void (*evq_dispatch_cb)(
-		dispatch_context_s*,
+		evq_dispatch_context_s*,
 		struct epoll_event*
 		);
 
 typedef void(*evq_dispose_user_data_fn)(void*);
 
-struct dispatch_context {
+struct evq_dispatch_context {
 	int fd;
 	void* user_data;
 	evq_dispose_user_data_fn dispose_user_data_fn;
@@ -23,12 +23,12 @@ struct dispatch_context {
 	extern "C" {
 #endif
 
-int create_socket_and_bind(
+int evq_create_socket_and_bind(
 						char* node,
 						char *service
 						);
 
-dispatch_context_s* evq_create_dispatch_context(
+evq_dispatch_context_s* evq_create_evq_dispatch_context(
 											int efd,
 											int fd,
 											void* user_data,
@@ -36,14 +36,14 @@ dispatch_context_s* evq_create_dispatch_context(
 											evq_dispatch_cb dispach_cb
 											);
 
-void evq_dispose_dispatch_context(dispatch_context_s* d);
+void evq_dispose_dispatch_context(evq_dispatch_context_s* d);
 
-int make_fd_non_blocking(int sfd);
+int evq_make_fd_non_blocking(int sfd);
 
 int evq_add_to_monitoring(
 						int efd,
 						int fd,
-						dispatch_context_s* context
+						evq_dispatch_context_s* context
 						);
 
 void evq_event_loop(
