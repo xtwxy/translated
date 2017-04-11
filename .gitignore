@@ -17,10 +17,17 @@ Makefile.in
 /missing
 /stamp-h1
 
+# Autotools generated and build.
 ar-lib
 build/
 config.guess
 config.sub
 ltmain.sh
 m4/
+
+# eclipse generated.
+.autotools
+.cproject
+.project
+.settings/
 
