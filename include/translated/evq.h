@@ -7,6 +7,7 @@ typedef struct evq_dispatch_context evq_dispatch_context_s;
 
 typedef void (*evq_dispatch_cb)(
 		evq_dispatch_context_s*,
+		int efd,
 		struct epoll_event*
 		);
 

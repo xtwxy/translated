@@ -122,7 +122,7 @@ void evq_event_loop(int epollfd, int max_events) {
 		}
 		for (int i = 0; i < nfds; ++i) {
 			context = events[i].data.ptr;
-			context->dispatch_cb(context, &events[i]);
+			context->dispatch_cb(context, epollfd, &events[i]);
 		}
 	}
 	free(events);
