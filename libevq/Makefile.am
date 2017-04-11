@@ -6,5 +6,6 @@ libevq_la_LDFLAGS=-module -avoid-version -shared
 
 libevq_la_LIBADD=
 
-libevq_la_SOURCES=src/main.c
+libevq_la_SOURCES=src/libevq.c
 
+libevq_la_CPPFLAGS = -I$(top_srcdir)/include
