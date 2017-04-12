@@ -27,6 +27,7 @@ AC_CONFIG_FILES([
     include/Makefile
     libevq/Makefile
     librpc/Makefile
+    libmodbus/Makefile
     translated/Makefile
     pkginfo/Makefile
 ])

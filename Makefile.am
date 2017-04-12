@@ -4,6 +4,7 @@ SUBDIRS = pkginfo \
 	translated \
 	libevq \
 	librpc \
+	libmodbus \
 	include
 	 
 dist_doc_DATA = README
